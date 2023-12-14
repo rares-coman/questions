@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import data from "./data";
-import Question from "./Question";
+import Question from "./Questions";
+import Questions from "./Questions";
 
 const App = () => {
   const [questions, setQuestions] = useState(data);
@@ -8,9 +9,7 @@ const App = () => {
     <main>
       <div className="container">
         <h1>Questions</h1>
-        {questions.map((question) => {
-          return <Question {...question} key={question.id} />;
-        })}
+        <Questions questions={questions} />
       </div>
     </main>
   );
